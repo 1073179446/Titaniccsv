@@ -1,0 +1,16 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as pit
+df = pd.read_csv("train.csv")
+df.head()
+df.info()
+df.describe()
+df.["Age"].hist(bins=20)
+plt.xlabel("Age")
+plt.ylabel("Count")
+plt.show()
+survived_counts = df ["Survived"].value_counts()
+plt.bar(survived_counts.index, survived_counts.values)
+plt.xticks([0,1], ["Not Survived", "Survived"])
+plt.ylabel("Count")
+plt.show()
